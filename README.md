@@ -3,6 +3,8 @@ Simple scripts for working with Docker
 
 ## Programs
 
+* dt-images-clean
+    - This command will remove dangling images (images with no tag).
 * dt-stop
     - This command will stop all running docker containers.
 * dt-version
