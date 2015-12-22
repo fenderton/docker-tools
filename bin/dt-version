@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Docker version..."
+docker version
+
+echo "Docker machine version..."
+docker-machine --version
+
+echo "Docker compose version..."
+docker-compose --version
+
+exit 0
