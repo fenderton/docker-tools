@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ $(docker volume ls -f dangling=true -q | wc -l) -gt 0 ]; then
+  docker volume rm $(docker volume ls -f dangling=true -q)
+else
+  echo "There are no volumes to clean."
+fi
+
+exit 0

@@ -9,6 +9,8 @@ Simple scripts for working with Docker
     - This command will stop all running docker containers.
 * dt-version
     - This command will show the versions of docker client/server, machine, and compose.
+* dt-volumes-clean
+    - This command will remove dangling volumes (volumes with no associated containers).
 
 ## Installation
 
