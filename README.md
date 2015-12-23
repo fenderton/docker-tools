@@ -5,6 +5,8 @@ Simple scripts for working with Docker
 
 * dt-images-clean
     - This command will remove dangling images (images with no tag).
+* dt-nuke
+    - This command will stop and remove all containers, delete all images, and delete all volumes.
 * dt-stop
     - This command will stop all running docker containers.
 * dt-version

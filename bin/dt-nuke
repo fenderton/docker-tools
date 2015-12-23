@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ "$1" != "--force" ]; then
+  echo "This command will permanently delete everything. You must set the --force flag for this to work."
+  exit 1
+fi
+
+dt-stop
+
+if [ $(docker ps -aq | wc -l) -gt 0 ]; then
+  echo "Removing ALL containers..."
+  docker rm -f $(docker ps -aq)
+else
+  echo "There are no containers to clean."
+fi
+
+if [ $(docker images -aq | wc -l) -gt 0 ]; then
+  echo "Removing ALL images..."
+  docker rmi -f $(docker images -aq)
+else
+  echo "There are no images to clean."
+fi
+
+dt-volumes-clean
+
+exit 0
