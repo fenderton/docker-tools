@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $(docker ps -aq | wc -l) -gt 0 ]; then
+  echo "Removing ALL containers..."
+  docker rm -f $(docker ps -aq)
+else
+  echo "There are no containers to clean."
+fi
+
+exit 0
