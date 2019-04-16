@@ -5,17 +5,6 @@ if [ "$1" != "--force" ]; then
   exit 1
 fi
 
-dt-stop
-
-dt-clean-containers
-
-if [ $(docker images -aq | wc -l) -gt 0 ]; then
-  echo "Removing ALL images..."
-  docker rmi -f $(docker images -aq)
-else
-  echo "There are no images to clean."
-fi
-
-dt-volumes-clean
+docker system prune --all --volumes --force
 
 exit 0
